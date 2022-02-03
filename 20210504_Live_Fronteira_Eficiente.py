@@ -10,7 +10,7 @@ ativos = ['ABEV3.SA', 'EQTL3.SA', 'LREN3.SA', 'CIEL3.SA', 'RADL3.SA', 'RENT3.SA'
 
 df = pd.DataFrame()
 
-df= yf.download(ativos, start = '2017-01-01', end = '2022-02-03')['Adj Close']
+df= yf.download(ativos, start = '2019-01-01', end = '2022-02-03')['Adj Close']
 
 retorno_diario = df.pct_change()
 
@@ -69,7 +69,7 @@ retorno_carteira = retorno_carteira.sum(axis = 1)
 
 returns_acm = (1 + retorno_carteira).cumprod()
 
-ibov = yf.download('^BVSP', start = '2017-01-01', end = '2022-02-03')['Adj Close']
+ibov = yf.download('^BVSP', start = '2019-01-01', end = '2022-02-03')
 
 ibov.rename(columns = {'Adj Close': 'IBOV'}, inplace = True)
 
