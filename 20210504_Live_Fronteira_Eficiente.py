@@ -2,7 +2,7 @@
 
 import pandas as pd
 import numpy as np
-from pandas_datareader import data as wb
+import yfinance as yf
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -10,9 +10,7 @@ ativos = ['ABEV3.SA', 'EQTL3.SA', 'LREN3.SA', 'CIEL3.SA', 'RADL3.SA', 'RENT3.SA'
 
 df = pd.DataFrame()
 
-for t in ativos:
-  df[t] = wb.DataReader(t, data_source = 'yahoo', start = '2014-01-01', end = '2022-02-03')['Adj Close']
-
+df= yf.download(ativos, start = '2017-01-01', end = '2022-02-03')['Adj Close']
 
 retorno_diario = df.pct_change()
 
@@ -33,7 +31,7 @@ stock_weights = []
 
 num_assets = len(ativos)
 
-num_portfolios = 200000
+num_portfolios = 1000
 
 peso = np.random.random(num_assets)
 
@@ -71,25 +69,17 @@ retorno_carteira = retorno_carteira.sum(axis = 1)
 
 returns_acm = (1 + retorno_carteira).cumprod()
 
-ibov = wb.DataReader('^BVSP', data_source = 'yahoo', start = '2014-01-01', end = '2021-05-03')['Adj Close']
+ibov = yf.download('^BVSP', start = '2017-01-01', end = '2022-02-03')['Adj Close']
 
-ibov_retornos = ibov.pct_change()
+ibov.rename(columns = {'Adj Close': 'IBOV'}, inplace = True)
 
-ibov_retornos_acm = (1 + ibov_retornos).cumprod()
+ibov_retornos_acm = ibov/ibov.iloc[0]
 
 novo_df = pd.merge(pd.DataFrame(ibov_retornos_acm), pd.DataFrame(returns_acm, columns = ['Minha Carteira']), how = 'inner', on = 'Date')
-
-novo_df.rename(columns = {'Adj Close': 'IBOV'}, inplace = True)
-
-#novo_df.plot()
 
 novo_df['Date'] = novo_df.index
 
 novo_df.plot(x = 'Date', y = ['IBOV', 'Minha Carteira'], kind = 'line', figsize= (10,10))
-
-plt.text(0.8, 1, 'Trading com Dados', transform=ax.transAxes,
-        fontsize=60, color='gray', alpha=0.2,
-        ha='center', va='center', rotation='30')
 
 plt.show()
 
