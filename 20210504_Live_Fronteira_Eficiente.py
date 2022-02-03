@@ -81,7 +81,17 @@ novo_df = pd.merge(pd.DataFrame(ibov_retornos_acm), pd.DataFrame(returns_acm, co
 
 novo_df.rename(columns = {'Adj Close': 'IBOV'}, inplace = True)
 
-novo_df.plot();
+#novo_df.plot()
+
+novo_df['Date'] = novo_df.index
+
+novo_df.plot(x = 'Date', y = ['IBOV', 'Minha Carteira'], kind = 'line', figsize= (10,10))
+
+plt.text(0.8, 1, 'Trading com Dados', transform=ax.transAxes,
+        fontsize=60, color='gray', alpha=0.2,
+        ha='center', va='center', rotation='30')
+
+plt.show()
 
 
 
