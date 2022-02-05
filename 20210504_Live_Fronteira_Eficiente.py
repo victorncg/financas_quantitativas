@@ -2,12 +2,14 @@
 
 # Rotina para criação da Fronteira Eficiente usando a simulação de Monte Carlo
 
+# 1. Abertura das bibliotecas
 import pandas as pd
 import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# 2. Lista com os ativos que serão utilizados
 ativos = ['ABEV3.SA', 'EQTL3.SA', 'LREN3.SA', 'CIEL3.SA', 'RADL3.SA', 'RENT3.SA', 'MDIA3.SA', 'WEGE3.SA', 'EZTC3.SA', 'FLRY3.SA']
 
 df = pd.DataFrame()
