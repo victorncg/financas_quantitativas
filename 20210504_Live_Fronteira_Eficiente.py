@@ -1,5 +1,7 @@
 # Importando bibliotecas
 
+# Rotina para criação da Fronteira Eficiente usando a simulação de Monte Carlo
+
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -36,6 +38,8 @@ num_portfolios = 1000
 peso = np.random.random(num_assets)
 
 peso /= np.sum(peso)
+
+# Preenchimento das listas com os parâmetros
 
 for single_portfolio in range(num_portfolios):
   weights = np.random.random(num_assets)
