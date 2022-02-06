@@ -1,28 +1,31 @@
 # Importando bibliotecas
 
+# Rotina para criação da Fronteira Eficiente usando a simulação de Monte Carlo
+
+# 1. Abertura das bibliotecas
 import pandas as pd
 import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# 2. Lista com os ativos que serão utilizados
 ativos = ['ABEV3.SA', 'EQTL3.SA', 'LREN3.SA', 'CIEL3.SA', 'RADL3.SA', 'RENT3.SA', 'MDIA3.SA', 'WEGE3.SA', 'EZTC3.SA', 'FLRY3.SA']
 
-df = pd.DataFrame()
-
+# 3. Criação de dataframe com os "Adjusted Close" dos papéis
 df= yf.download(ativos, start = '2019-01-01', end = '2022-02-03')['Adj Close']
 
-retorno_diario = df.pct_change()
-
+# 4. Cálculo do retorno diário e retorno normalizado
 retorno_diario = retorno_diario.iloc[1:]
-
 
 retorno_anual = retorno_diario.mean()*250
 
+# 5. Matriz de covariância
 cov_diario = retorno_diario.cov()
 
 cov_anual = cov_diario*250
 
+# 6. Retornos, volatilidades e pesos que serão simulados
 port_returns = []
 
 port_volatility = []
@@ -36,6 +39,8 @@ num_portfolios = 1000
 peso = np.random.random(num_assets)
 
 peso /= np.sum(peso)
+
+# Preenchimento das listas com os parâmetros
 
 for single_portfolio in range(num_portfolios):
   weights = np.random.random(num_assets)

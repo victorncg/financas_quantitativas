@@ -8,4 +8,5 @@ A intenção é compartilhar aqui um pouco do processo de criação em si, não 
 Eles incluem códigos desenvolvidos para aulas, lives, rascunhos de projetos, análises para meu portfólio pesssoal de investimentos, dentre outros.
 
 > UPDATES
-> * 03/02/2022 - Adição de código de simulação de Monte Carlo criado durante a live sobre Fronteira Eficiente. A intenção é enxugar/otimizar esse código de forma a criar um tutorial para as redes sociais.
+> * 03/02/2022 - Adição de código de simulação de Monte Carlo criado durante a live sobre Fronteira Eficiente. A intenção é enxugar/otimizar esse código de forma a criar um tutorial para as redes sociais. Esse conteúdo deve entrar no Módulo de backtesting.
+> > * 04/02/2022 - Uma outra edição foi feita de forma a ter um formato executável (.py) e rodar em outras rotinas já prontas.
