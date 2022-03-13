@@ -10,3 +10,5 @@ Eles incluem códigos desenvolvidos para aulas, lives, rascunhos de projetos, an
 > UPDATES
 > * 03/02/2022 - Adição de código de simulação de Monte Carlo criado durante a live sobre Fronteira Eficiente. A intenção é enxugar/otimizar esse código de forma a criar um tutorial para as redes sociais. Esse conteúdo deve entrar no Módulo de backtesting.
 > > * 04/02/2022 - Uma outra edição foi feita de forma a ter um formato executável (.py) e rodar em outras rotinas já prontas.
+
+> * 13/03/2022 - Subi os códigos criados na Jornada Quant 03. Esse material será utilizado para a produção de novas aulas para cursos e para o YouTube.
