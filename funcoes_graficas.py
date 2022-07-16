@@ -4,6 +4,7 @@
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def razao_preco_media(stock, start, mm):
