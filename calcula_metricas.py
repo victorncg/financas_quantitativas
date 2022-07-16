@@ -28,7 +28,7 @@ def plota_razao_preco_media(stock, start, mm):
     #import yfinance as yf
     #import pandas as pd
 
-    data = yf.download(stock, start = start)
+    data = yf.download(stock, start = start, progress= False)
 
     data['media'] = data.Close.rolling(mm).mean()
 
@@ -41,4 +41,4 @@ def plota_razao_preco_media(stock, start, mm):
 
     data['razao'] = data['Close']/data['media']
 
-    return data['razao']
+    return data['razao'].plot();
