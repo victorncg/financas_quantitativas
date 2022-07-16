@@ -81,6 +81,7 @@ def plota_razao_preco_media_marcado(stock, start, mm):
     ax.plot(x,y)
     plt.axhline(y=np.mean(y), color='r', linestyle='-')
 
-    plt.title(f'Razão Preço/Média de Preço nos últimos 30 dias')
+    titulo = f'Razão Preço/Média de Preço nos últimos 30 dias'
+    plt.title(titulo)
 
     plt.show()
