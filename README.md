@@ -12,3 +12,4 @@ Eles incluem códigos desenvolvidos para aulas, lives, rascunhos de projetos, an
 > > * 04/02/2022 - Uma outra edição foi feita de forma a ter um formato executável (.py) e rodar em outras rotinas já prontas.
 
 > * 13/03/2022 - Subi os códigos criados na Jornada Quant 03. Esse material será utilizado para a produção de novas aulas para cursos e para o YouTube.
+> * 18/07/2022 - As rotinas que foram criadas aqui para teste, e que já foram validadas em lives ou aulas da Trading com Dados serão passadas para repositórios da Trading com Dados.
