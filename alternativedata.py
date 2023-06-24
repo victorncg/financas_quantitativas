@@ -3,6 +3,8 @@
 # SOME OF THE ALTERNATIVE DATA WE CAN OBTAIN FROM THIS MODULE
 # IBOV Composition
 # Google Trends
+# CVM
+# B3
 
 import pandas as pd
 
