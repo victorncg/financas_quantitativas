@@ -5,6 +5,7 @@
 # Google Trends
 # CVM
 # B3
+# S&P 500
 
 import pandas as pd
 
@@ -33,7 +34,7 @@ def _logging_error(func):
     return wrapper
 
 @_logging_error
-def _standardize_df():
+def _standardize_ibov():
   url = 'https://raw.githubusercontent.com/victorncg/financas_quantitativas/main/IBOV.csv'
   df = pd.read_csv(url, encoding='latin-1', sep='delimiter', header=None, engine='python')
   df = pd.DataFrame(df[0].str.split(';').tolist())
@@ -42,6 +43,13 @@ def _standardize_df():
   df.reset_index(drop=True, inplace=True)
 
   return df
+
+def _standardize_sp500():
+    table=pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+    df = table[0]
+
+  return df
+
 
 @_logging_error
 def ibov_composition(ativos = 'all', mode = 'df', reduction = True):
