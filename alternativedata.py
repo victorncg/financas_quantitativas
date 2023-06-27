@@ -88,7 +88,7 @@ def index_composition(index = 'ibov', ativos = 'all', mode = 'df', reduction = T
         df = list(df.Código)
     
   if index = 'sp500':
-      df = _standardize_ibov()
+      df = _standardize_sp500()
     
 
 
