@@ -37,6 +37,23 @@ def _logging_error(func):
     return wrapper
 
 
+# Função para extrair os dados do IBOV
+@_logging_error
+def _parse_ibov():
+    
+    try:
+        
+        url = 'https://raw.githubusercontent.com/victorncg/financas_quantitativas/main/IBOV.csv'
+        df = pd.read_csv(url, encoding='latin-1', sep='delimiter', header=None, engine='python')
+        df = pd.DataFrame(df[0].str.split(';').tolist())
+        
+        return df
+        
+    except:
+        
+        print("An error occurred while parsing data from IBOV.")
+
+
 
 @_logging_error
 def _standardize_ibov():
