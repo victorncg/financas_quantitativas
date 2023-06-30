@@ -60,9 +60,7 @@ def _standardize_ibov():
     
     try:
         
-        url = 'https://raw.githubusercontent.com/victorncg/financas_quantitativas/main/IBOV.csv'
-        df = pd.read_csv(url, encoding='latin-1', sep='delimiter', header=None, engine='python')
-        df = pd.DataFrame(df[0].str.split(';').tolist())
+        df = _parse_ibov()
         df.columns = list(df.iloc[1])
         df[2:][['Código','Ação',	'Tipo',	'Qtde. Teórica','Part. (%)']]
         df.reset_index(drop=True, inplace=True)
