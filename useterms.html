@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #888;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    #accept-terms {
+      margin-top: 20px;
+    }
+
+    #submit-btn {
+      margin-top: 10px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 10px 30px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #19cca3;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .btn span {
+      color: #FFFFFF;
+    }
+
+    .btn:hover {
+      background-color: #15a68c; /* Cor de destaque quando o mouse está sobre o botão */
+    }
+    
+  </style>
+</head>
+
+<body>
+  <a href="#" class="btn" onclick="openModal()"><span>Quero entrar no HUB</span></a>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h4>Termos de Uso - HUB Trading com Dados</h4>
+      <br>
+      <div style="max-height: 300px; overflow-y: auto;">
+        <p>
+          Bem-vindo ao HUB Trading com Dados. Leia atentamente estes termos de uso antes de utilizar nosso serviço.
+        </p>
+        <br>
+        <ol>
+          <br>
+          <!-- Adicione mais cláusulas de acordo com suas necessidades -->
+            <h5>1. Aceitação dos Termos de Uso</h2>
+            <p>Ao utilizar este produto de acesso a dados de mercado financeiro, você concorda com estes termos de uso. Certifique-se de ler atentamente todas as informações aqui presentes antes de prosseguir.</p>
+            <br>
+            <h5>2. Descrição do Produto</h2>
+            <p>O HUB dá acesso e fornece informações e análises sobre diversos aspectos do mercado financeiro, incluindo, mas não se limitando a, cotações de ações, índices, moedas, commodities métricas, modelos e indicadores quantitativos. As informações são fornecidas com base em fontes consideradas confiáveis, porém, não garantimos sua exatidão, completude ou atualidade.</p>
+            <br>
+            <h5>3. Uso Autorizado</h2>
+            <p>Este produto é disponibilizado apenas para uso pessoal e não comercial. Você concorda em utilizar os dados e informações fornecidos exclusivamente para fins informativos e de pesquisa. Você não pode revender, sublicenciar ou distribuir os dados e informações fornecidos pelo produto. Caso haja interesse em explorar os dados comercialmente, entre em contato com o time da Trading com Dados.</p>
+            <br>
+            <h5>4. Responsabilidades do Usuário</h2>
+            <p>O uso deste produto é de sua inteira responsabilidade. Você concorda em utilizar as informações e dados fornecidos de maneira ética e legal, em conformidade com todas as leis e regulamentos aplicáveis. Você também reconhece que o mercado financeiro é volátil e sujeito a riscos, e assume a responsabilidade por todas as decisões e ações tomadas com base nas informações fornecidas por este produto.</p>
+            <p>Você reconhece e concorda que o uso do produto de acesso a dados de mercado financeiro é por sua conta e risco. O provedor do serviço não se responsabiliza por quaisquer perdas financeiras, danos, lesões ou quaisquer outras consequências resultantes do uso ou confiança nas informações fornecidas pelo produto. </p>
+            <p>O provedor do serviço não garante a exatidão, integridade ou atualidade das informações fornecidas pelo produto. A Trading com Dados atua como agregadora de dados, trazendo informação de fornecedores externos. As informações podem estar sujeitas a atrasos, erros, interrupções ou omissões, e o provedor do serviço não oferece garantias quanto à sua precisão ou confiabilidade.</p>
+            <h5>5. Propriedade Intelectual</h2>
+            <p>Todos os direitos de propriedade intelectual relacionados a este produto, incluindo, mas não se limitando a, textos, gráficos, logotipos, ícones e software, são de nossa propriedade ou de nossos licenciadores. Nada nestes termos de uso concede a você direitos de propriedade sobre o produto.</p>
+            <p>Todos os direitos de propriedade intelectual relacionados ao produto de acesso a dados de mercado financeiro são de propriedade exclusiva do provedor do serviço ou de seus licenciadores. Você reconhece que não adquire nenhum direito de propriedade intelectual ao utilizar o produto.</p>
+            <p>Você concorda em não reproduzir, modificar, distribuir, transmitir, exibir ou criar trabalhos derivados do produto ou de seu conteúdo, a menos que expressamente autorizado pelo provedor do serviço.</p>
+            <h5>6. Uso Aceitável</h2>
+            <p>Você concorda em utilizar o produto de acesso a dados de mercado financeiro somente para fins legais e éticos. O uso do produto está sujeito às leis e regulamentações aplicáveis relacionadas a dados financeiros, propriedade intelectual, privacidade e qualquer outra legislação pertinente.</p>
+            <p>Você não deve utilizar o produto de forma a violar direitos de terceiros, incluindo direitos autorais, marcas registradas, segredos comerciais ou qualquer outro direito de propriedade intelectual.</p>
+            <h5>7. Privacidade</h2>
+            <p>Os dados pessoais fornecidos por você durante o uso deste produto serão tratados de acordo com nossa Política de Privacidade. Ao utilizar o produto, você concorda com a coleta, uso e divulgação de suas informações pessoais de acordo com nossa política.</p>
+            <h5>8. Aviso de Proteção de Direitos Autorais</h2>
+            <p>Observe que, em nenhum momento, é permitido replicar o código-fonte deste produto ou duplicá-lo de qualquer forma para adicionar a outra base de código, sem permissão expressa por escrito e uma licença empresarial. </p>
+            <p>Além disso, ressaltamos que a plataforma HUB ou qualquer parte dela está disponível apenas para uso pessoal, interno, treinamento e pesquisa por meio de desenvolvimento e codificação adicional, e que tal desenvolvimento e codificação, em seu formato original e/ou atual (o que for aplicável), em todos os momentos materiais, implícitos e tácitos, permanecerão e se tornarão propriedade intelectual do titular dos direitos autorais, Trading com Dados.</p>
+            <p>O HUB permite o uso do código, enquanto o titular dos direitos autorais automaticamente retém e possui todos os direitos, interesses e títulos gerados e simultaneamente concedidos ao titular dos direitos autorais de acordo com a Lei Internacional de Propriedade Intelectual, seja por meio de desenvolvimento adicional ou codificação.</p>
+            <p>Qualquer desenvolvimento e/ou codificação adicional de qualquer natureza que aprimore e/ou melhore o formato original e/ou atual (o que for aplicável) permanecerá exclusivamente como propriedade do titular dos direitos autorais, e, portanto, nenhuma reivindicação de propriedade e/ou titularidade ou compensação monetária existirá, nem no passado, presente ou futuro. Em termos mais simples: Nenhuma pessoa, agente ou IA terá qualquer reivindicação de propriedade ou titularidade contra o titular dos direitos autorais por qualquer motivo relacionado a qualquer desenvolvimento e/ou codificação que possa ou não melhorar e/ou aprimorar a plataforma em seu formato original e/ou atual (o que for aplicável), e, portanto, por meio deste, renuncia e abre mão irrevogável e incondicionalmente de qualquer reivindicação desse tipo, de qualquer natureza, quer no passado, presente ou futuro.</p>
+            <h5>9. Rescisão</h2>
+            <p>O provedor do serviço reserva-se o direito de rescindir o acesso do usuário ao produto de acesso a dados de mercado financeiro a qualquer momento, caso o usuário viole os termos de uso, leis aplicáveis ou de qualquer outra forma comprometa a integridade ou segurança do serviço.</p>       
+                
+            <br>
+        </ol>
+      </div>
+      <label for="accept-terms">
+        <input type="checkbox" id="accept-terms" onclick="toggleSubmitButton()" />
+        Eu li e concordo com os termos de uso
+      </label>
+      <!-- <button id="submit-btn" disabled>Enviar</button> -->
+      <a href="hub-payment"><input type="submit" name="submit" id="submit-btn" disabled></a>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function toggleSubmitButton() {
+      const checkbox = document.getElementById("accept-terms");
+      const submitButton = document.getElementById("submit-btn");
+
+      if (checkbox.checked) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }
+  </script>
+</body>
+
+</html>
