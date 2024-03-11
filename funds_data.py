@@ -60,7 +60,7 @@ def extract_fund_data(dates_list, verbose = False):
   return combined_df
 
 
-def get_fund_data(start, end, cnpj:object = None, verbose = False):
+def get_funds_data(start, end, cnpj:object = None, verbose = False):
 
   interval = create_interval(start, end)
 
