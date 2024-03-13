@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import datetime
 
+
 def create_interval(start_date, end_date):
 
   b = list()
