@@ -6,34 +6,28 @@ import datetime
 
 def create_interval(start_date: object, end_date: object):
     
-    """
-    This function is responsable for receiving user input for start and end dates for data extraction and transforming it into YYYYMM format.
+    b = list()
     
-    :start_date: str
-    :end_date: str
-    """
-    
-  b = list()
+    end = str(datetime.datetime.strptime(end_date, '%Y-%m-%d').year) + '{:02d}'.format(datetime.datetime.strptime(end_date, '%Y-%m-%d').month +1)
 
-  end = str(datetime.datetime.strptime(end_date, '%Y-%m-%d').year) + '{:02d}'.format(datetime.datetime.strptime(end_date, '%Y-%m-%d').month +1)
+    for year in range(int(datetime.datetime.strptime(start_date, '%Y-%m-%d').year), int(datetime.datetime.strptime(end_date, '%Y-%m-%d').year)+1):
+        
+        for month in range(1,13):
 
-  for year in range(int(datetime.datetime.strptime(start_date, '%Y-%m-%d').year), int(datetime.datetime.strptime(end_date, '%Y-%m-%d').year)+1):
+            a = '{:02d}{:02d}'.format(year, month)
 
-    for month in range(1,13):
+            if a == end:
+                
+                break
+                
+        b.append(a)
 
-      a = '{:02d}{:02d}'.format(year, month)
-
-      if a == end:
-        break
-
-      b.append(a)
-
-    if a == end:
-        break
+        if a == end:
+            break
 
     year = year +1
 
-  return b
+    return b
 
 
 
