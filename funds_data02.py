@@ -2,34 +2,8 @@ import time
 import pandas as pd
 import datetime
 
-import functools
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger()
 
 
-def _logging_error(func):
-    @functools.wraps(func)
-    def wrapper(*args, **kwargs):
-        args_repr = [repr(a) for a in args]
-        kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]
-        signature = ", ".join(args_repr + kwargs_repr)
-        logger.debug(f"function {func.__name__} called with args {signature}")
-        try:
-            result = func(*args, **kwargs)
-            return result
-        except Exception as e:
-            logger.exception(
-                f"Exception raised in {func.__name__}. exception: {str(e)}"
-            )
-            raise e
-
-    return wrapper
-
-
-
-@_logging_error
 def create_interval(start_date: object, end_date: object):
     
     """
@@ -62,7 +36,7 @@ def create_interval(start_date: object, end_date: object):
   return b
 
 
-@_logging_error
+
 def extract_fund_data(dates_list: list, verbose: bool = False):
     """
     This function downloads raw data from CVM for all funds. It does not filter by date nor CNPJ.
@@ -103,7 +77,7 @@ def extract_fund_data(dates_list: list, verbose: bool = False):
 
 
 
-@_logging_error
+
 def get_funds_data(start: object, end: object, cnpj:object = None, verbose: bool = False):
     """
     This function receives the raw data from function extract_fund_data and filters by date and CNPJ. If user doesn't specify CNPJ, it returns all funds.
