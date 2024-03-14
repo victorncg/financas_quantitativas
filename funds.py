@@ -32,7 +32,7 @@ def _logging_error(func):
 def create_interval(start_date: object, end_date: object):
 
     """
-    This function is responsable for receiving user input for start and end dates for data extraction and transforming it into YYYYMM format.
+    This function is responsible for receiving user input for start and end dates for data extraction and transforming it into YYYYMM format.
     
     :start_date: str
     :end_date: str
