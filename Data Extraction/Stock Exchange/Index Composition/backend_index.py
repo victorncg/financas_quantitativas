@@ -5,7 +5,8 @@ def return_index(index:str):
 
     conversion = {'ibov':'Qk9W',
                  'ibra':'QlJB',
-                 'ifix': 'RklY'}
+                 'ifix': 'RklY',
+                  'idiv': 'RElW'}
 
     hash_code = f'eyJsYW5ndWFnZSI6InB0LWJyIiwicGFnZU51bWJlciI6MSwicGFnZVNpemUiOjEyMCwiaW5kZXgiOiJJ{conversion[index]}Iiwic2VnbWVudCI6IjEifQ=='
 
